@@ -1,0 +1,13 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+python-dotenv>=1.0.0
+openpyxl>=3.1.0
+extruct>=0.13.0
+w3lib>=2.1.0
+lxml>=4.9.0
+playwright>=1.40.0
+python-Wappalyzer>=0.3.1
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+# Optional: Only install if using Gemini instead of XAI
+# google-generativeai>=0.3.0

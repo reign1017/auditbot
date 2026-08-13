@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiteAuditBot — Law Firm Site Audit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">◇</span>
+        <h1>SiteAuditBot</h1>
+      </div>
+      <p class="tagline">Law firm site audit — performance, schema, AI visibility, tone & accessibility</p>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <form id="audit-form" class="audit-form">
+          <div class="input-wrap">
+            <input type="url" id="url-input" placeholder="https://example.com" required autocomplete="url">
+            <button type="submit" id="run-btn" class="btn btn-primary">
+              <span class="btn-text">Run audit</span>
+              <span class="btn-loading" aria-hidden="true">Running…</span>
+            </button>
+          </div>
+          <div class="options">
+            <label class="opt">
+              <input type="checkbox" id="skip-ssl" checked>
+              <span>Skip SSL Labs (faster)</span>
+            </label>
+            <label class="opt">
+              <input type="checkbox" id="no-cache" checked>
+              <span>No cache</span>
+            </label>
+          </div>
+        </form>
+        <p class="hint">Audits take 1–2 minutes. Ensure <code>PAGESPEED_API_KEY</code> and <code>XAI_API_KEY</code> (or Mistral/Gemini) are set in <code>.env</code>.</p>
+      </section>
+
+      <div id="error-banner" class="error-banner" hidden></div>
+
+      <section id="results" class="results" hidden>
+        <div class="results-header">
+          <h2 id="results-title">Audit results</h2>
+          <a id="report-link" class="report-link" href="#" hidden>Download report</a>
+        </div>
+        <div id="results-grid" class="results-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>SiteAuditBot · Performance · Schema · AI Conversion · Tone · Axe · SSL</p>
+    </footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
